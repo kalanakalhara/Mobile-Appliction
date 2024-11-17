@@ -1,0 +1,7 @@
+{
+  "name": "woof-work",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
