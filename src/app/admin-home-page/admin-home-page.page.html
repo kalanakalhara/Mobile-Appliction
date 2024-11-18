@@ -1,0 +1,43 @@
+<ion-content [fullscreen]="true">
+  <div class="main-content">
+    <div class="top-content">
+      <div class="header-section">
+        <div class="logo-content">
+          <img src="../../assets/main-img/Dog Nutrition.png" alt="" />
+        </div>
+        <p>Welcome Admin</p>
+        <button><img src="../../assets/main-img/Logout.svg" alt="" /></button>
+      </div>
+    </div>
+    <div class="bottom-content">
+      <div class="wrapper">
+        <div class="bottom-btn-section">
+          <ul>
+            <li class="bottom-btn-list">
+              <button (click)="navigateToAddProduct()">
+                Create New Product
+              </button>
+            </li>
+            <li class="bottom-btn-list">
+              <button (click)="navigateToViewProduct()">View Product</button>
+            </li>
+            <li class="bottom-btn-list">
+              <button (click)="navigateToViewOrder()">View Order</button>
+            </li>
+            <li class="bottom-btn-list">
+              <button>Add Orders</button>
+            </li>
+            <li class="bottom-btn-list">
+              <button>Users</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-btn-section">
+    <div class="home-btn">
+      <button><img src="../../assets/main-img/home.svg" alt="" />Home</button>
+    </div>
+  </div>
+</ion-content>

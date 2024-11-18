@@ -1,0 +1,57 @@
+<ion-content [fullscreen]="true">
+  <div class="main-content">
+    <div class="top-content">
+      <div class="header-section">
+        <div class="logo-content">
+          <img src="../../assets/main-img/Dog Nutrition.png" alt="" />
+        </div>
+        <p>Welcome {{ userName }}</p>
+        <button (click)="logout()">
+          <img src="../../assets/main-img/Logout.svg" alt="" />
+        </button>
+      </div>
+    </div>
+    <div class="bottom-content">
+      <div class="wrapper">
+        <div class="bottom-section-product-item">
+          <ul>
+            <li
+              *ngFor="let product of products"
+              class="product-item-details-box"
+            >
+              <div class="item-img">
+                <img src="../../assets/main-img/doog-food.jpeg" alt="" />
+              </div>
+              <div class="item-name-price-section">
+                <h1>{{ product.name }}</h1>
+                <p>Rs {{ product.price }}</p>
+              </div>
+              <div class="item-description">
+                <p>{{ product.description }}</p>
+              </div>
+              <div class="add-to-cart-section">
+                <button (click)="addToCart(product)">
+                  Add to Cart
+                  <img src="../../assets/main-img/cart-1.svg" alt="" />
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-btn-section">
+    <div class="footer-main-btn-section">
+      <div class="semi-btn">
+        <button><img src="../../assets/main-img/cart-1.svg" alt="" /></button>
+      </div>
+      <div class="home-btn">
+        <button><img src="../../assets/main-img/home.svg" alt="" />Home</button>
+      </div>
+      <div class="semi-btn">
+        <button><img src="../../assets/main-img/User.svg" alt="" /></button>
+      </div>
+    </div>
+  </div>
+</ion-content>

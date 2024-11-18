@@ -1,20 +1,15 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="main-content">
+    <div class="top-content">
+      <div class="logo-content">
+        <img src="../../assets/main-img/Dog Nutrition.png" alt="" />
+      </div>
+    </div>
+    <div class="bottom-content">
+      <div class="btn-section">
+        <button id="login" (click)="navigateToLogin()">Log In</button>
+        <button id="register" (click)="navigateToRegister()">Register</button>
+      </div>
+    </div>
   </div>
 </ion-content>

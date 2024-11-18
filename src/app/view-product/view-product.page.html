@@ -1,0 +1,66 @@
+<ion-content [fullscreen]="true">
+  <div class="main-content">
+    <div class="top-content">
+      <div class="header-section">
+        <div class="logo-content">
+          <img src="../../assets/main-img/Dog Nutrition.png" alt="" />
+        </div>
+        <p>Welcome Admin</p>
+        <button><img src="../../assets/main-img/Logout.svg" alt="" /></button>
+      </div>
+    </div>
+    <div class="bottom-content">
+      <div class="wrapper">
+        <div class="main-product-content">
+          <div class="product-header-content">
+            <h1>Product</h1>
+          </div>
+          <div class="product-bottom-content">
+            <div class="product-more-details-header-section">
+              <div class="product-id-section" id="id-section">ID</div>
+              <div class="product-name-section" id="name-section">
+                Product Name
+              </div>
+              <div class="product-price-section" id="price-section">Price</div>
+              <div class="product-delete-section" id="delete-section"></div>
+            </div>
+            <div class="product-more-details-bottom-section">
+              <ul>
+                <li
+                  class="product-details-section"
+                  *ngFor="let product of products; let i = index"
+                  (click)="openEditProduct(product)"
+                >
+                  <div class="product-id-section" id="bottom-id-section">
+                    {{ i + 1 }}
+                  </div>
+                  <div class="product-name-section" id="bottom-name-section">
+                    {{ product.name }}
+                  </div>
+                  <div class="product-price-section" id="bottom-price-section">
+                    Rs {{ product.price }}
+                  </div>
+                  <div
+                    class="product-delete-section"
+                    id="bottom-delete-section"
+                  >
+                    <button (click)="deleteProduct(product.id, $event)">
+                      <img src="../../assets/main-img/bin.svg" alt="" />
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-btn-section">
+    <div class="home-btn">
+      <button (click)="navigateToAdminHome()">
+        <img src="../../assets/main-img/home.svg" alt="" />Home
+      </button>
+    </div>
+  </div>
+</ion-content>

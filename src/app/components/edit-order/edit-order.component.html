@@ -1,0 +1,32 @@
+<div class="backdrop" (click)="close()"></div>
+<div class="popup-main-content">
+  <div class="close-btn">
+    <button (click)="close()">
+      <img src="../../../assets/main-img/Close.svg" alt="" />
+    </button>
+  </div>
+  <div class="wrapper">
+    <div class="order-main-list-content">
+      <div class="order-list-header">
+        <p>Item details</p>
+      </div>
+      <div class="order-bottom-list-content">
+        <ul>
+          <li class="order-list-item">
+            <div class="item-name"><p>item name</p></div>
+            <div class="item-category"><p>item Category</p></div>
+            <div class="item-price"><p>Rs 2000</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="total-price-content">
+      <p>Total Price</p>
+      <span>Rs 5000</span>
+    </div>
+    <div class="order-btn-section">
+      <button id="update-btn">Update</button>
+      <button id="cancel-btn">Cancel</button>
+    </div>
+  </div>
+</div>

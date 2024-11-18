@@ -1,0 +1,71 @@
+<ion-content [fullscreen]="true">
+  <div class="main-content">
+    <div class="top-content">
+      <div class="header-section">
+        <div class="logo-content">
+          <img src="../../assets/main-img/Dog Nutrition.png" alt="" />
+        </div>
+        <p>Welcome Admin</p>
+        <button><img src="../../assets/main-img/Logout.svg" alt="" /></button>
+      </div>
+    </div>
+    <div class="bottom-content">
+      <div class="wrapper">
+        <div class="main-product-content">
+          <div class="product-header-content">
+            <h1>Add Product</h1>
+          </div>
+          <form (submit)="addProduct($event)">
+            <label>Product Name</label>
+            <input
+              type="text"
+              placeholder="Enter Product Name"
+              [(ngModel)]="productName"
+              name="productName"
+              required
+            />
+            <label>Product Price</label>
+            <input
+              type="text"
+              placeholder="Enter Product Price"
+              [(ngModel)]="productPrice"
+              name="productPrice"
+              required
+            />
+            <label>Product Description</label>
+            <textarea
+              name="productDescription"
+              id="item-description"
+              placeholder="Enter Product Description"
+              [(ngModel)]="productDescription"
+              required
+            ></textarea>
+            <label>Product Category</label>
+            <ion-select
+              aria-label="category"
+              placeholder="Select Category"
+              toggleIcon="caret-down-sharp"
+              [(ngModel)]="productCategory"
+              name="productCategory"
+              required
+            >
+              <ion-select-option value="dog-food">Dog Food</ion-select-option>
+              <ion-select-option value="nutrition">Nutrition</ion-select-option>
+            </ion-select>
+
+            <div class="product-submit-btn">
+              <button type="submit">Add product</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-btn-section">
+    <div class="home-btn">
+      <button (click)="navigateToAdminHome()">
+        <img src="../../assets/main-img/home.svg" alt="" />Home
+      </button>
+    </div>
+  </div>
+</ion-content>

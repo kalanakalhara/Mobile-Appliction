@@ -1,0 +1,52 @@
+<div class="backdrop" (click)="close()"></div>
+<div class="popup-main-content">
+  <div class="close-btn">
+    <button (click)="close()">
+      <img src="../../../assets/main-img/Close.svg" alt="" />
+    </button>
+  </div>
+  <div class="wrapper">
+    <form (submit)="updateProduct()">
+      <label>Product Name</label>
+      <input
+        type="text"
+        placeholder="Product name"
+        [(ngModel)]="product.name"
+        name="name"
+        required
+      />
+      <label>Product Price</label>
+      <input
+        type="text"
+        placeholder="Product price"
+        [(ngModel)]="product.price"
+        name="price"
+        required
+      />
+      <label>Product Description</label>
+      <textarea
+        name="description"
+        id="product"
+        placeholder="product description"
+        placeholder="Product description"
+        [(ngModel)]="product.description"
+        required
+      ></textarea>
+      <label>Product Category</label>
+      <ion-select
+        aria-label="category"
+        placeholder="Select Category"
+        toggleIcon="caret-down-sharp"
+        [(ngModel)]="product.category"
+        name="category"
+        required
+      >
+        <ion-select-option value="dog-food">Dog Food</ion-select-option>
+        <ion-select-option value="nutrition">Nutrition</ion-select-option>
+      </ion-select>
+      <div class="product-submit-btn">
+        <button type="submit">Update product</button>
+      </div>
+    </form>
+  </div>
+</div>

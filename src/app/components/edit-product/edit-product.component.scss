@@ -1,0 +1,116 @@
+.backdrop {
+  height: 100%;
+  opacity: 0.4;
+  background: rgba(0, 0, 0, 1);
+}
+
+.popup-main-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  width: 90%;
+  /*height: 60%; */
+  border-radius: 10px;
+  padding: 10px 0px;
+  flex-direction: column;
+}
+
+.close-btn {
+  width: 95%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 auto;
+  button {
+    background: none;
+    width: 7%;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+form {
+  width: 90%;
+  /* margin-top: 15px; */
+  margin: 15px auto;
+  label {
+    font-size: 15px;
+    font-family: poppins;
+    font-weight: 500;
+    line-height: 20px;
+    margin-top: 10px;
+    color: rgba(0, 0, 0, 1);
+  }
+  input {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 10px;
+    background-color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-family: poppins;
+    font-weight: 500;
+    line-height: 20px;
+    margin-top: 10px;
+    color: rgb(126, 126, 126);
+    border: 1px solid rgba(180, 180, 180, 1);
+  }
+  textarea {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 10px;
+    font-size: 15px;
+    font-family: poppins;
+    font-weight: 500;
+    line-height: 20px;
+    margin-top: 10px;
+    color: rgba(126, 126, 126, 1);
+    border: 1px solid rgba(180, 180, 180, 1);
+    background-color: rgb(255, 255, 255);
+  }
+  ion-select {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    padding: 0px 10px;
+    font-size: 15px;
+    font-family: poppins;
+    font-weight: 500;
+    line-height: 20px;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(180, 180, 180, 1);
+    color: rgba(126, 126, 126, 1);
+  }
+}
+.product-submit-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  button {
+    font-size: 15px;
+    font-family: poppins;
+    font-weight: 500;
+    line-height: 20px;
+    width: 60%;
+    background: rgba(185, 94, 55, 1);
+    padding: 10px 0px;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 1);
+  }
+}
