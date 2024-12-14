@@ -12,21 +12,30 @@
       </div>
       <div class="order-bottom-list-content">
         <ul>
-          <li class="order-list-item">
-            <div class="item-name"><p>item name</p></div>
-            <div class="item-category"><p>item Category</p></div>
-            <div class="item-price"><p>Rs 2000</p></div>
+          <li class="order-list-item" *ngFor="let item of order.items">
+            <div class="item-name">
+              <p>{{ item.productName }}</p>
+            </div>
+            <div class="item-category">
+              <button (click)="decreaseQuantity(item)">-</button>
+              <p>{{ item.quantity }}</p>
+
+              <button (click)="increaseQuantity(item)">+</button>
+            </div>
+            <div class="item-price">
+              <p>Rs {{ item.price * item.quantity }}</p>
+            </div>
           </li>
         </ul>
       </div>
     </div>
     <div class="total-price-content">
       <p>Total Price</p>
-      <span>Rs 5000</span>
+      <span>Rs {{ calculateTotal() }}</span>
     </div>
     <div class="order-btn-section">
-      <button id="update-btn">Update</button>
-      <button id="cancel-btn">Cancel</button>
+      <button id="update-btn" (click)="updateOrder()">Update</button>
+      <button id="cancel-btn" (click)="close()">Cancel</button>
     </div>
   </div>
 </div>

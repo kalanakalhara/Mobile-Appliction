@@ -13,10 +13,21 @@
     </div>
     <div class="bottom-content">
       <div class="wrapper">
+        <div class="search-content">
+          <input
+            type="text"
+            placeholder="Search Items"
+            [(ngModel)]="searchQuery"
+            (input)="filterProducts()"
+          />
+          <img src="../../assets/main-img/search.svg" alt="" />
+        </div>
+      </div>
+      <div class="wrapper">
         <div class="bottom-section-product-item">
           <ul>
             <li
-              *ngFor="let product of products"
+              *ngFor="let product of filteredProducts"
               class="product-item-details-box"
             >
               <div class="item-img">
@@ -44,14 +55,27 @@
   <div class="footer-btn-section">
     <div class="footer-main-btn-section">
       <div class="semi-btn">
-        <button><img src="../../assets/main-img/cart-1.svg" alt="" /></button>
+        <button (click)="navigateToOrderListPage()">
+          <img
+            src="../../assets/main-img/order.svg"
+            alt=""
+            id="order-list-img"
+          />
+        </button>
       </div>
       <div class="home-btn">
         <button><img src="../../assets/main-img/home.svg" alt="" />Home</button>
       </div>
       <div class="semi-btn">
-        <button><img src="../../assets/main-img/User.svg" alt="" /></button>
+        <button (click)="openUserProfile()">
+          <img src="../../assets/main-img/User.svg" alt="" />
+        </button>
       </div>
+    </div>
+    <div class="cart-btn-section">
+      <button (click)="openCart()">
+        <img src="../../assets/main-img/cart-1.svg" alt="" />
+      </button>
     </div>
   </div>
 </ion-content>

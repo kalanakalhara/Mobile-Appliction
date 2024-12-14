@@ -17,17 +17,33 @@
           </div>
           <div class="product-bottom-content">
             <div class="product-more-details-header-section">
-              <div class="product-id-section" id="id-section">ID</div>
+              <!-- <div class="product-id-section" id="id-section">ID</div>
               <div class="product-name-section" id="name-section">
                 Orders list
               </div>
               <div class="product-price-section" id="price-section">Price</div>
-              <div class="product-delete-section" id="delete-section"></div>
+              <div class="product-delete-section" id="delete-section"></div> -->
+              <div class="orders-number">
+                <p>No</p>
+              </div>
+              <div class="orders-price">
+                <p>Total Price</p>
+              </div>
+              <div class="orders-status">
+                <p>Status</p>
+              </div>
+              <div class="orders-delete">
+                <!-- <img src="../../../assets/main-img/bin.svg" alt="" /> -->
+              </div>
             </div>
             <div class="product-more-details-bottom-section">
               <ul>
-                <li class="product-details-section" (click)="openEditOrder()">
-                  <div class="product-id-section" id="bottom-id-section">1</div>
+                <li
+                  class="product-details-section"
+                  (click)="openEditOrder(order)"
+                  *ngFor="let order of orders; let i = index"
+                >
+                  <!-- <div class="product-id-section" id="bottom-id-section">1</div>
                   <div class="product-name-section" id="bottom-name-section">
                     item
                   </div>
@@ -41,6 +57,25 @@
                     <button>
                       <img src="../../assets/main-img/comfirm.svg" alt="" />
                     </button>
+                  </div> -->
+                  <div class="orders-number">
+                    <p>{{ i + 1 }}</p>
+                  </div>
+                  <div class="orders-price">
+                    <p>$ {{ order.total }}</p>
+                  </div>
+                  <div class="orders-status">
+                    <p
+                      [ngClass]="{'status-process': order.status === 'process', 'status-completed': order.status === 'completed'}"
+                    >
+                      {{ order.status }}
+                    </p>
+                  </div>
+                  <div
+                    class="orders-delete"
+                    (click)="updateOrderStatus(order.id, 'completed')"
+                  >
+                    <img src="../../assets/main-img/comfirm.svg" alt="" />
                   </div>
                 </li>
               </ul>
@@ -52,7 +87,9 @@
   </div>
   <div class="footer-btn-section">
     <div class="home-btn">
-      <button><img src="../../assets/main-img/home.svg" alt="" />Home</button>
+      <button (click)="navigateToAdminHome()">
+        <img src="../../assets/main-img/home.svg" alt="" />Home
+      </button>
     </div>
   </div>
 </ion-content>

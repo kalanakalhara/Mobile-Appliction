@@ -39,6 +39,14 @@ const routes: Routes = [
     path: 'view-order',
     loadChildren: () => import('./view-order/view-order.module').then( m => m.ViewOrderPageModule)
   },
+  {
+    path: 'add-order',
+    loadChildren: () => import('./add-order/add-order.module').then( m => m.AddOrderPageModule)
+  },
+  {
+    path: 'orders-list',
+    loadChildren: () => import('./orders-list/orders-list.module').then( m => m.OrdersListPageModule)
+  },
 ];
 
 @NgModule({

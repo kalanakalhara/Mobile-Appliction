@@ -1,0 +1,52 @@
+<div class="backdrop" (click)="close()"></div>
+<div class="popup-main-content">
+  <div class="cart-header-section">
+    <div class="cart-header-section-text">
+      <h1>Hi! {{ userDetails?.name || "User" }}</h1>
+    </div>
+    <button (click)="close()">
+      <img src="../../../assets/main-img/close-white.svg" alt="" />
+    </button>
+  </div>
+  <div class="wrapper">
+    <div class="user-image-section">
+      <div class="user-image">
+        <img src="../../../assets/main-img/user2.svg" alt="" />
+      </div>
+    </div>
+    <div class="user-details-form">
+      <form action="#" (ngSubmit)="updateDetails()">
+        <label for="name">User name</label>
+        <input
+          id="name"
+          type="text"
+          [(ngModel)]="userDetails.name"
+          name="name"
+          placeholder="Enter your name"
+        />
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          [(ngModel)]="userDetails.email"
+          name="email"
+          placeholder="Enter your email"
+        />
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          [(ngModel)]="userDetails.password"
+          name="password"
+          placeholder="Enter a new password"
+        />
+        <div class="order-btn-section">
+          <button id="update-btn" type="submit">Update</button>
+          <button id="cancel-btn" type="button" (click)="close()">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

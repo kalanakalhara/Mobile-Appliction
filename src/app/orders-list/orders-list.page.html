@@ -1,0 +1,98 @@
+<ion-content [fullscreen]="true">
+  <div class="main-content">
+    <div class="top-content">
+      <div class="header-section">
+        <div class="logo-content">
+          <img src="../../assets/main-img/Dog Nutrition.png" alt="" />
+        </div>
+
+        <button (click)="navigateToCustomerHomePage()">
+          <img src="../../assets/main-img/Logout.svg" alt="" />
+        </button>
+      </div>
+    </div>
+    <div class="bottom-content">
+      <div class="wrapper">
+        <div class="bottom-section-order-items">
+          <div class="orders-header-section">
+            <h1>Orders</h1>
+          </div>
+          <div class="orders-bottom-content">
+            <div class="orders-bottom-header-section">
+              <div class="orders-number">
+                <p>No</p>
+              </div>
+              <div class="orders-price">
+                <p>Total Price</p>
+              </div>
+              <div class="orders-status">
+                <p>Status</p>
+              </div>
+              <div class="orders-delete">
+                <!-- <img src="../../../assets/main-img/bin.svg" alt="" /> -->
+              </div>
+            </div>
+            <ul>
+              <li
+                class="order-item-content"
+                *ngFor="let order of orders; let i = index"
+              >
+                <div class="orders-number">
+                  <p>{{ i + 1 }}</p>
+                </div>
+                <div class="orders-price">
+                  <p>$ {{ order.total }}</p>
+                </div>
+                <div class="orders-status">
+                  <p
+                    [ngClass]="{'status-process': order.status === 'process', 'status-completed': order.status === 'completed'}"
+                  >
+                    {{ order.status }}
+                  </p>
+                </div>
+                <div class="orders-delete">
+                  <img src="../../../assets/main-img/bin.svg" alt="" />
+                </div>
+              </li>
+              <!-- <li class="order-item-content">
+                <div class="orders-number">
+                  <p>2</p>
+                </div>
+                <div class="orders-price">
+                  <p>$ 500</p>
+                </div>
+                <div class="orders-status">
+                  <span>completed</span>
+                </div>
+                <div class="orders-delete">
+                  <img src="../../../assets/main-img/bin.svg" alt="" />
+                </div>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-btn-section">
+    <div class="footer-main-btn-section">
+      <div class="semi-btn">
+        <button>
+          <img
+            src="../../assets/main-img/order.svg"
+            alt=""
+            id="order-list-img"
+          />
+        </button>
+      </div>
+      <div class="home-btn">
+        <button (click)="navigateToCustomerHomePage()">
+          <img src="../../assets/main-img/home.svg" alt="" />Home
+        </button>
+      </div>
+      <div class="semi-btn">
+        <button><img src="../../assets/main-img/User.svg" alt="" /></button>
+      </div>
+    </div>
+  </div>
+</ion-content>

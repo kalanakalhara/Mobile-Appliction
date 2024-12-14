@@ -1,0 +1,61 @@
+<div class="backdrop" (click)="close()"></div>
+<div class="popup-main-content">
+  <div class="cart-header-section">
+    <div class="cart-header-section-text">
+      <h1>Hi! {{ userName }}</h1>
+    </div>
+    <button (click)="close()">
+      <img src="../../../assets/main-img/close-white.svg" alt="" />
+    </button>
+  </div>
+  <div class="wrapper">
+    <div class="cart-bottom-content-header">
+      <div class="cart-id-box">ID</div>
+      <div class="cart-item-box">Item</div>
+      <div class="cart-quantity-box">quantity</div>
+      <div class="cart-price-box">Price</div>
+      <div class="cart-delete-box"></div>
+    </div>
+    <div class="cart-bottom-items">
+      <ul>
+        <li class="item-details" *ngFor="let item of cartItems; let i = index">
+          <div class="cart-id-box">{{ i + 1 }}</div>
+          <div class="cart-item-box">{{ item.productName }}</div>
+          <div class="cart-quantity-box">
+            <button (click)="updateQuantity(item.id, item.quantity - 1)">
+              -
+            </button>
+            {{ item.quantity }}
+            <button (click)="updateQuantity(item.id, item.quantity + 1)">
+              +
+            </button>
+          </div>
+          <div class="cart-price-box">Rs {{ item.price }}</div>
+          <div class="cart-delete-box">
+            <button (click)="removeItem(item.id)">
+              <img src="../../../assets/main-img/bin.svg" alt="" />
+            </button>
+          </div>
+        </li>
+      </ul>
+      <div class="cart-amount-details">
+        <p>Net total</p>
+        <span>Rs 00</span>
+      </div>
+      <div class="cart-amount-details">
+        <p>delivery</p>
+        <span>Rs 00</span>
+      </div>
+      <div class="cart-amount-details">
+        <input type="text" placeholder="Enter coupon code" />
+      </div>
+      <div class="cart-total-price-box">
+        <p>total</p>
+        <span>Rs {{ getTotal() }}</span>
+      </div>
+      <div class="cart-submit-btn">
+        <button (click)="checkout()">Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>
